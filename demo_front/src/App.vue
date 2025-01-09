@@ -109,7 +109,7 @@ export default {
   },
   computed: {
     hasNextPage() {
-      return this.currentPage * 10 < this.totalUsers
+      return this.currentPage * 5 < this.totalUsers
     }
   },
   methods: {
@@ -149,7 +149,7 @@ export default {
       this.formData = { id: null, name: '', gender: 'male' }
     },
     changePage(page) {
-      if (page >= 1 && (page - 1) * 10 < this.totalUsers) {
+      if (page >= 1 && (page - 1) * 5 < this.totalUsers) {
         this.currentPage = page
         this.fetchUsers()
       }

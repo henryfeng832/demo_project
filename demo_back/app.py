@@ -28,7 +28,7 @@ Base.metadata.create_all(engine)
 def get_users():
     session = Session()
     page = request.args.get('page', 1, type=int)
-    per_page = 10
+    per_page = 5
     offset = (page - 1) * per_page
     
     users = session.query(User).offset(offset).limit(per_page).all()
